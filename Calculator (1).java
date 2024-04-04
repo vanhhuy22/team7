@@ -545,4 +545,21 @@ public class Calculator extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
+    	        Scanner scanner = new Scanner(System.in);
+
+	        // Prompt the user to enter the value of x
+	        System.out.print("Enter the value of x: ");
+	        double x = scanner.nextDouble();
+
+	        // Calculate the square root of x
+	        double squareRoot = Math.sqrt(x);
+
+	        // Display the result
+	        System.out.println("Square root of " + x + " is: " + squareRoot);
+
+	        // Close the scanner
+	        scanner.close();
+	    }
+	}
+
 }
