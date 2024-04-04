@@ -99,7 +99,29 @@ public class Calculator extends javax.swing.JFrame {
 
         jTextField1.setText(Double.toString(result));
     }
-
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
+        // Get the input value from the text field
+        String input = jTextField1.getText().trim();
+        
+        try {
+            // Parse the input value to double
+            double x = Double.parseDouble(input);
+            
+            // Check if the input is non-negative
+            if (x >= 0) {
+                // Calculate the square root
+                double squareRoot = Math.sqrt(x);
+                // Update the text field with the result
+                jTextField1.setText(Double.toString(squareRoot));
+            } else {
+                // Display error message for negative input
+                jTextField1.setText("Invalid Input: Negative Number");
+            }
+        } catch (NumberFormatException e) {
+            // Display error message for invalid input format
+            jTextField1.setText("Invalid Input");
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -545,21 +567,6 @@ public class Calculator extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
-    	        Scanner scanner = new Scanner(System.in);
-
-	        // Prompt the user to enter the value of x
-	        System.out.print("Enter the value of x: ");
-	        double x = scanner.nextDouble();
-
-	        // Calculate the square root of x
-	        double squareRoot = Math.sqrt(x);
-
-	        // Display the result
-	        System.out.println("Square root of " + x + " is: " + squareRoot);
-
-	        // Close the scanner
-	        scanner.close();
-	    }
-	}
+    
 
 }
